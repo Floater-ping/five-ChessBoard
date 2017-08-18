@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXS-Oi-TDA" customClass="TOCGraphicView">
+                                <rect key="frame" x="32.5" y="178.5" width="310" height="310"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="310" id="9gX-0b-nmf"/>
+                                    <constraint firstAttribute="height" constant="310" id="REV-SB-PP9"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WP3-UN-Uyh">
+                                <rect key="frame" x="15" y="15" width="74" height="34"/>
+                                <state key="normal" title="再来一局"/>
+                                <connections>
+                                    <action selector="beginNewchessboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b9s-ku-5X8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="比赛进行中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwW-5e-r3w">
+                                <rect key="frame" x="144" y="127.5" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qXS-Oi-TDA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Spw-5g-LLf"/>
+                            <constraint firstItem="qXS-Oi-TDA" firstAttribute="top" secondItem="iwW-5e-r3w" secondAttribute="bottom" constant="30" id="WbJ-5m-MIJ"/>
+                            <constraint firstItem="WP3-UN-Uyh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="15" id="ZPc-B7-H3I"/>
+                            <constraint firstItem="iwW-5e-r3w" firstAttribute="centerX" secondItem="qXS-Oi-TDA" secondAttribute="centerX" id="b7q-DU-czV"/>
+                            <constraint firstItem="WP3-UN-Uyh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="pGk-TB-oyb"/>
+                            <constraint firstItem="qXS-Oi-TDA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="s2j-rC-wdq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chessBoardView" destination="qXS-Oi-TDA" id="KWb-HT-gtn"/>
+                        <outlet property="showStatusLabel" destination="iwW-5e-r3w" id="EG4-2g-egP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-823" y="-563"/>
+        </scene>
+    </scenes>
+</document>
