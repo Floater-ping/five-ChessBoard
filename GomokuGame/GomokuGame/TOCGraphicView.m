@@ -204,33 +204,22 @@
     NSMutableArray *tempAddArrM = [NSMutableArray array];
     NSDictionary *tempDict = nil;
     
+    NSString *otherKey = @"";
+    if ([dictKey isEqualToString:@"pointY"]) {
+        otherKey = @"pointX";
+    }else {
+        otherKey = @"pointY";
+    }
     
     BOOL inOneHangOrLie = NO;
-    
-    
-    
-    
-    
     
     for (int i = 0; i < addArr.count; i++) {
         NSDictionary *dict = addArr[i];
         if (i == 0) {
             
         }else {
-            /// 计算斜率
-            CGFloat y = [tempDict[@"pointY"] floatValue] - [dict[@"pointY"] floatValue];
-            CGFloat x = [tempDict[@"pointX"] floatValue] - [dict[@"pointX"] floatValue];
-            BOOL isOk = NO;
-            if (x > 0) {
-                if (ABS(y / x) == 1 || ABS(y / x) == 0 ) {
-                    isOk = YES;
-                }
+            if ([tempDict[dictKey] isEqual:dict[dictKey]] && ABS([tempDict[otherKey] integerValue] - [dict[otherKey] integerValue]) == 30) {
                 
-            }else {
-                // 在x轴
-                isOk = YES;
-            }
-            if (isOk) {
             }else {
                 if (tempAddArrM.count >= 5) {
                     inOneHangOrLie = YES;
@@ -269,7 +258,7 @@
     
     /// 判断是不是在一列
     NSMutableArray *tempAddArrM = [NSMutableArray array];
-//    NSDictionary *tempDict = nil;
+    //    NSDictionary *tempDict = nil;
     
     
     BOOL inOneHangOrLie = NO;
